@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 const ExpenseDashboardPage = () => (
@@ -31,7 +31,7 @@ const helpPage = () => (
 
 const notFoundpPage = () => (
   <div>
-      404!
+      404 - <Link to='/'>Go home</Link>
   </div>
 )
 
