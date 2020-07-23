@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 const ExpenseDashboardPage = () => (
@@ -29,12 +29,21 @@ const helpPage = () => (
   </div>
 )
 
+const notFoundpPage = () => (
+  <div>
+      404!
+  </div>
+)
+
 const routes = (
   <BrowserRouter>
-    <Route path="/" component={ExpenseDashboardPage} exact={true} />
-    <Route path="/create" component={addExpensePage} />
-    <Route path="/edit" component={editExpensePage} />
-    <Route path="/help" component={helpPage} />
+    <Switch>
+      <Route path="/" component={ExpenseDashboardPage} exact={true} />
+      <Route path="/create" component={addExpensePage} />
+      <Route path="/edit" component={editExpensePage} />
+      <Route path="/help" component={helpPage} />
+      <Route component={notFoundpPage} />
+    </Switch>
   </BrowserRouter>
 )
 
