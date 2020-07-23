@@ -2,12 +2,44 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {BrowserRouter, Route} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
+const ExpenseDashboardPage = () => (
+  <div>
+      Dashboard
+  </div>
+)
+
+const addExpensePage = () => (
+  <div>
+      Create a new expense
+  </div>
+)
+
+const editExpensePage = () => (
+  <div>
+      Edit expense
+  </div>
+)
+
+const helpPage = () => (
+  <div>
+      Help Page
+  </div>
+)
+
+const routes = (
+  <BrowserRouter>
+    <Route path="/" component={ExpenseDashboardPage} exact={true} />
+    <Route path="/create" component={addExpensePage} />
+    <Route path="/edit" component={editExpensePage} />
+    <Route path="/help" component={helpPage} />
+  </BrowserRouter>
+)
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  routes,
   document.getElementById('root')
 );
 
