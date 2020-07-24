@@ -31,15 +31,23 @@ const addExpense = ({description = '', note = '', amount = 0, createdAt = 0} = {
   }
 });
 
+const removeExpense = ( {id} = {} ) => ({
+  type: 'REMOVE_EXPENSE',
+  id: id
+});
+
 const expenseReducer = ( state = expenseReducerDefaultState, action) => {
   switch (action.type) {
     case 'ADD_EXPENSE':
       return [
         ...state,
         action.expense
-      ]
-
-    default:
+      ];
+    
+    case 'REMOVE_EXPENSE':
+      return state.filter( expense => (expense.id != action.id) );
+    
+      default:
       return state;
   }
 }
@@ -94,5 +102,7 @@ store.subscribe(() => {
 });
 
 // we displatch the addexpesne reducer with some data
-store.dispatch(addExpense( { description: 'Rent', amount: 100} ));
-store.dispatch(addExpense( { description: 'Coffee', amount: 300} ));
+const exspenseOne = store.dispatch(addExpense( { description: 'Rent', amount: 100} ));
+const expenseTwo = store.dispatch(addExpense( { description: 'Coffee', amount: 300} ));
+
+store.dispatch(removeExpense({ id: exspenseOne.expense.id }));
