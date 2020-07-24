@@ -34,7 +34,10 @@ const addExpense = ({description = '', note = '', amount = 0, createdAt = 0} = {
 const expenseReducer = ( state = expenseReducerDefaultState, action) => {
   switch (action.type) {
     case 'ADD_EXPENSE':
-      return state.concat(action.expense);
+      return [
+        ...state,
+        action.expense
+      ]
 
     default:
       return state;
@@ -92,3 +95,4 @@ store.subscribe(() => {
 
 // we displatch the addexpesne reducer with some data
 store.dispatch(addExpense( { description: 'Rent', amount: 100} ));
+store.dispatch(addExpense( { description: 'Coffee', amount: 300} ));
