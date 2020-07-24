@@ -5,7 +5,7 @@ import AppRouter from './routers/AppRouter';
 import * as serviceWorker from './serviceWorker';
 
 import {createStore, combineReducers } from 'redux';
-
+import {v4 as uuid} from 'uuid';
 
 ReactDOM.render(
   <AppRouter />,
@@ -17,35 +17,31 @@ ReactDOM.render(
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
-const demoState = {
-  expenses:[
-    {
-      id: 'adskjfdashfjkdsaf',
-      description: 'January Rent',
-      note: 'Rents for the month of Jan',
-      amount: '5430',
-      createdAt: 0
-    }
-  ],
-  filters: {
-    text: 'rent',
-    sortBy: 'amount', // date or amount
-    startDate: undefined,
-    endDate: undefined
-  }
-};
-
 const expenseReducerDefaultState = [];
+
+// Actions fall here
+const addExpense = ({description = '', note = '', amount = 0, createdAt = 0} = {}) => ({
+  type: 'ADD_EXPENSE',
+  expense: {
+    id: uuid(),
+    description,
+    note,
+    amount,
+    createdAt
+  }
+});
 
 const expenseReducer = ( state = expenseReducerDefaultState, action) => {
   switch (action.type) {
-    case '':
-      break;
-  
+    case 'ADD_EXPENSE':
+      return state.concat(action.expense);
+
     default:
       return state;
   }
 }
+
+console.log('we are here ')
 
 const defaultFilterState = {
   text: '',
@@ -71,4 +67,28 @@ const store = createStore(
   })
 );
 
-console.log(store.getState())
+
+const demoState = {
+  expenses:[
+    {
+      id: 'adskjfdashfjkdsaf',
+      description: 'January Rent',
+      note: 'Rents for the month of Jan',
+      amount: '5430',
+      createdAt: 0
+    }
+  ],
+  filters: {
+    text: 'rent',
+    sortBy: 'amount', // date or amount
+    startDate: undefined,
+    endDate: undefined
+  }
+};
+//subscribe store to listen to changes
+store.subscribe(() => {
+  console.log('---->',store.getState())
+});
+
+// we displatch the addexpesne reducer with some data
+store.dispatch(addExpense( { description: 'Rent', amount: 100} ));
