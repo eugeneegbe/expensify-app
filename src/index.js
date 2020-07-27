@@ -16,7 +16,7 @@ const store = configureStore();
 
 const exp1 = store.dispatch(addExpense( { description: 'Rent', amount: 100, createdAt: 1000} ));
 store.dispatch(addExpense( { description: 'Coffee', amount: 300, createdAt: -1000} ));
-store.dispatch(setFilterText( {text: 're'} ));
+store.dispatch(setFilterText( {text: ''} ));
 store.dispatch(setStartDate( {startDate: 200} ));
 store.dispatch(setEndDate( {endDate: 999} ));
 
