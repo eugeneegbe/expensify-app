@@ -5,7 +5,9 @@ import removeExpense from '../actions/expenses/removeExpense';
 
 const ExpenseListItem = ({ dispatch, id, description, amount, createdAt }) => (
     <div>
-        <Link to={'/edit/'.concat(id)}>{description}</Link>
+        <Link to={`/edit/${id}`}>
+            <h3>{description}</h3>
+        </Link>
         
         <p>${amount} | {createdAt}</p>
         <button
