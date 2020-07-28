@@ -61,6 +61,7 @@ export default class ExpenseForm extends React.Component {
                         onDateChange={this.onDateChage}
                         focused={this.state.focusCalendar}
                         onFocusChange={this.onFocusChange}
+                        numberOfMonths={1}
                     />
                     <textarea 
                         onChange={this.onNoteChange}
