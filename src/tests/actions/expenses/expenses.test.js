@@ -21,16 +21,26 @@ test('Should setup editExpense action object', () => {
     })
 })
 
-// test('Should setup addExpenses action object', () => {
-//     const result = addExpense({ description:'Test', note:'Test note', amount: 200, createdAt: 1000 })
-//     expect(result).toEqual({
-//         type: 'ADD_EXPENSE',
-//         expense: {
-//             id: '123abc',
-//             description: 'Test',
-//             note:'Test note',
-//             amount: 200,
-//             createdAt: 1000
-//         }
-//     });
-// });
+test('Should setup addExpenses action object with values', () => {
+    const expense = { description:'Test', note:'Test note', amount: 200, createdAt: 1000 };
+    const action = addExpense(expense);
+    expect(action).toEqual({
+        type: 'ADD_EXPENSE',
+        expense: {
+            id: expect.any(String),
+            ...expense
+        }
+    });
+});
+
+test('Should setup addExpense action object without values', () => {
+    const expense = { description:'', note:'', amount: 0, createdAt: 0 };
+    const action = addExpense();
+    expect(action).toEqual({
+        type: 'ADD_EXPENSE',
+        expense: {
+            id: expect.any(String),
+            ...expense
+        }
+    })
+});
