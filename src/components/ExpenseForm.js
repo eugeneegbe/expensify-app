@@ -6,13 +6,17 @@ import 'react-dates/lib/css/_datepicker.css';
 
 
 export default class ExpenseForm extends React.Component {
-        state = {
-        description: '',
-        note: '',
-        amount: '',
-        createdAt: moment(),
-        focusCalendar: false,
-        error: false
+    constructor(props){
+        super(props);
+
+        this.state = {
+            description: props.expense ? props.expense.description : '',
+            note: props.expense ? props.expense.note : '',
+            amount: props.expense ? (props.expense.amount / 100).toString() : '',
+            createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+            focusCalendar: false,
+            error: false
+        }
     }
 
     onDescriptionChange = (e) => {
@@ -65,6 +69,7 @@ export default class ExpenseForm extends React.Component {
                 <form onSubmit={this.onSubmit}>
                     <input
                         type='text'
+                        value={this.state.description}
                         placeholder='Description'
                         autoFocus={true}
                         onChange={this.onDescriptionChange}

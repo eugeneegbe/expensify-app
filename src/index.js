@@ -13,7 +13,7 @@ import setStartDate from './actions/filters/setStartDate';
 
 const store = configureStore();
 
-const exp1 = store.dispatch(addExpense( { description: 'Rent', amount: 100, createdAt: 1000} ));
+const exp1 = store.dispatch(addExpense( { description: 'Rent for July', amount: 100, createdAt: 1000} ));
 store.dispatch(addExpense( { description: 'Coffee', amount: 300, createdAt: -1000} ));
 store.dispatch(addExpense( { description: 'Water Bill', amount: 49500, createdAt: 2000} ));
 // store.dispatch(setFilterText( {text: 'Coffee'} ));
