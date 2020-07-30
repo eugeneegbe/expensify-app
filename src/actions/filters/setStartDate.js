@@ -1,4 +1,4 @@
-const setStartDate = ({ startDate = undefined }) => ({
+const setStartDate = (startDate) => ({
     type: 'SET_START_DATE',
     startDate
 })

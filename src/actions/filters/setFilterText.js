@@ -1,4 +1,4 @@
-const setFilterText = ({text = ''}) => ({
+const setFilterText = (text = '') => ({
     type: 'SET_TEXT_FiLTER',
     text
   });
