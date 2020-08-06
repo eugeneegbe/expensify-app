@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import setFilterText from '../actions/filters/setFilterText';
 import sortByDate from '../actions/filters/setSortByDate';
 import sortByAmount from '../actions/filters/setSortByAmount';
-import setSortByAmount from '../actions/filters/setSortByAmount';
 
 
 const ExpenseListFilters = (props) => (

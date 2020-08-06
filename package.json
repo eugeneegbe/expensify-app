@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "express": "^4.17.1",
     "moment": "^2.27.0",
+    "numeral": "^2.0.6",
     "react": "^16.13.1",
     "react-addons-shallow-compare": "^15.6.2",
     "react-dates": "^21.8.0",
@@ -21,7 +22,7 @@
   "scripts": {
     "start": "node server/server.js",
     "build": "react-scripts build",
-    "test": "react-scripts test  .src/tests",
+    "test": "react-scripts test .src/tests",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },

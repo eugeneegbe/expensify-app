@@ -13,22 +13,6 @@ import setStartDate from './actions/filters/setStartDate';
 
 const store = configureStore();
 
-const exp1 = store.dispatch(addExpense( { description: 'Rent for July', amount: 100, createdAt: 1000} ));
-store.dispatch(addExpense( { description: 'Coffee', amount: 300, createdAt: -1000} ));
-store.dispatch(addExpense( { description: 'Water Bill', amount: 49500, createdAt: 2000} ));
-// store.dispatch(setFilterText( {text: 'Coffee'} ));
-store.dispatch(setStartDate( {startDate: 200} ));
-store.dispatch(setEndDate( {endDate: 999} ));
-
-const state = store.getState();
-
-console.log(state)
-
-// const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-
-// console.log('vis expenses',visibleExpenses);
-
-
 const jsx = (
   <Provider store={store}>
     <AppRouter />
