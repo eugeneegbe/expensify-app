@@ -5,7 +5,7 @@ import AppRouter from './routers/AppRouter';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore';
 import {Provider}  from 'react-redux';
-
+import './firebase/firebase';
 
 const store = configureStore();
 
