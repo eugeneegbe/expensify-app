@@ -3,25 +3,25 @@ import firebaseConfig from './config';
 
 firebase.initializeApp(firebaseConfig);
 
-firebase.database().ref().set( {
-    name: 'New deal',
-    age: 27,
-    isSingle: false,
-    location: {
-        city: 'Yaounde',
-        Country: 'Cameroon'
-    }
-} ).then( () => {
-    console.log( 'Data added successfully!' )
-} ).catch( ( e ) => {
-    console.log( 'Something went wrong!', e)
-} );
+const database = firebase.database();
 
-var adaRef = firebase.database().ref( 'isSingle' );
-adaRef.remove()
-  .then(function() {
-    console.log("Remove succeeded.")
-  })
-  .catch(function(error) {
-    console.log("Remove failed: " + error.message)
-  });
+const expenseData = {
+    sdakjfdsaf: {
+        description: 'House rent',
+        amount: 500.98,
+        createdAt: 3000
+    },
+    eklsdjfsdf: {
+        description: 'Weekly food',
+        amount: 300.44,
+        createdAt: 10000
+    },
+    klsajfdkjsafk: {
+        description: 'Car Maintenance',
+        amount: 3000,
+        createdAt: -29000
+    }
+}
+
+
+database.ref( 'expenses' ).push( expenseData );
