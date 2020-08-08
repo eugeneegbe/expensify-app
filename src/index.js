@@ -8,6 +8,8 @@ import {Provider}  from 'react-redux';
 import startSetExpense from './actions/expenses/setExpense';
 import './firebase/firebase';
 
+ReactDOM.render( <p>Loading...</p>, document.getElementById('root') );
+
 const store = configureStore();
 
 const jsx = (
@@ -17,6 +19,7 @@ const jsx = (
 )
 
 store.dispatch(startSetExpense());
+
 ReactDOM.render( jsx, document.getElementById('root') );
 
 // If you want your app to work offline and load faster, you can change
