@@ -29,7 +29,7 @@ const configureStore = () => {
             expenses: expenseReducer,
             filters: filterReducer
         }),
-        composeEnhancers(applyMiddleware(thunk))
+        composeEnhancers(applyMiddleware( thunk ))
     );
 
     //subscribe store to listen to changes

@@ -5,7 +5,10 @@ import AppRouter from './routers/AppRouter';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore';
 import {Provider}  from 'react-redux';
+import startSetExpense from './actions/expenses/setExpense';
 import './firebase/firebase';
+
+ReactDOM.render( <p>Loading...</p>, document.getElementById('root') );
 
 const store = configureStore();
 
@@ -14,6 +17,8 @@ const jsx = (
     <AppRouter />
   </Provider>
 )
+
+store.dispatch(startSetExpense());
 
 ReactDOM.render( jsx, document.getElementById('root') );
 
