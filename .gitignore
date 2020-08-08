@@ -25,4 +25,4 @@ yarn-error.log*
 /src/playground/
 
 #ignore firebase config info
-/src/firebase/config.js
+# /src/firebase/config.js
