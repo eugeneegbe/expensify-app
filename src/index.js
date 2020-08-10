@@ -8,8 +8,6 @@ import {Provider}  from 'react-redux';
 import startSetExpense from './actions/expenses/setExpense';
 import './firebase/firebase';
 
-ReactDOM.render( <p>Loading...</p>, document.getElementById('root') );
-
 const store = configureStore();
 
 const jsx = (
