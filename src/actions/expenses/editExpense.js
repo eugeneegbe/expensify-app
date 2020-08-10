@@ -1,3 +1,5 @@
+import database from '../../firebase/firebase';
+
 // EDIT_EXPENSE
 const editExpense = (id, updates) => ({
     type: 'EDIT_EXPENSE',
@@ -5,9 +7,9 @@ const editExpense = (id, updates) => ({
     updates
 });
 
-const startRemoveExpense = (id, updates) => {
+const startEditExpense = (id, updates) => {
     return (dispatch) => {
-        database.ref( 'expenses/' + id ).update( ...updates ).then(
+        database.ref( 'expenses/' + id ).update( updates ).then(
             () => {
                 dispatch( editExpense( id,updates ) )
             }, ( e ) => {
@@ -17,4 +19,4 @@ const startRemoveExpense = (id, updates) => {
     };
 };
 
-default export startRemoveExpense;
+default export startEditExpense;
