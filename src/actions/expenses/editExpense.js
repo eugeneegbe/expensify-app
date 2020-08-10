@@ -9,7 +9,7 @@ const editExpense = (id, updates) => ({
 
 const startEditExpense = (id, updates) => {
     return (dispatch) => {
-        database.ref( 'expenses/' + id ).update( updates ).then(
+        return database.ref( 'expenses/' + id ).update( updates ).then(
             () => {
                 dispatch( editExpense( id,updates ) )
             }, ( e ) => {
