@@ -25,3 +25,15 @@ code {
   font-size: 15px;
   cursor: pointer;
 }
+
+.header{
+  background: #364051
+}
+
+.header__title{
+  color: white;
+  text-decoration: none;
+  h1 {
+    margin: 0
+  }
+}
