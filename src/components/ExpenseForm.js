@@ -95,7 +95,7 @@ export default class ExpenseForm extends React.Component {
                         placeholder='Add a note for expense'
                     >
                     </textarea>
-                    <button>Add Expense</button>
+                    <button className='button'>Add Expense</button>
                 </form>
             </div>
         )

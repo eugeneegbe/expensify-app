@@ -9,14 +9,10 @@ const editExpense = (id, updates) => ({
 
 const startEditExpense = (id, updates) => {
     return (dispatch) => {
-        return database.ref( 'expenses/' + id ).update( updates ).then(
-            () => {
-                dispatch( editExpense( id,updates ) )
-            }, ( e ) => {
-                console.log('something went wrong', e.message)
-            }
-        );
+        return database.ref( 'expenses/' + id ).update( updates ).then(() => {
+            dispatch( editExpense( id, updates ) );
+        });
     };
 };
 
-default export startEditExpense;
+export default startEditExpense;

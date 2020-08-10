@@ -15,3 +15,13 @@ code {
 .is-active{
   font-weight: bold;
 }
+
+.button {
+  background: #1c88bf;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}

@@ -18,7 +18,7 @@ const EditExpensePage = (props) => {
                 }
             />
             <button
-                
+                className='button'
                 onClick={ () => {
                     console.log(props.expense.id)
                     props.dispatch(startRemoveExpense(props.expense.id))
