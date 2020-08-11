@@ -89,6 +89,14 @@ code {
   padding: 0.5rem;
 }
 
+.textarea {
+  border: 1px solid #cacccd;
+  font-size: large;
+  font-weight: 300;
+  height: 10rem;
+  padding: 0.5rem;
+}
+
 /* Larger screens input display */
 @media(min-width: 45rem) {
   .input-group{
