@@ -47,17 +47,17 @@ code {
 .header__title{
   color: white;
   text-decoration: none;
-  h1 {
-    margin: 0;
-  }
 }
 
+.header__title > h1 {
+  margin: 0;
+}
 
 .header__content{
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 2rem;
 }
 
 .content-container{
@@ -103,7 +103,6 @@ code {
   padding: 0.5rem;
 }
 
-
 .form {
   display: flex;
   flex-direction: column;
@@ -119,6 +118,16 @@ code {
   margin-bottom: 1rem;
 }
 
+.show-for-mobile{
+  @media(min-width: 45rem) {
+    display: none;
+  }
+}
+.show-for-desktop{
+  @media(max-width: 45rem - 0.01rem) {
+    display: none;
+  }
+}
 /* Larger screens input display */
 @media(min-width: 45rem) {
   .input-group{
@@ -130,5 +139,92 @@ code {
   }
   .page-header {
     padding: 3rem 0;
+  }
+  /* display table columns when on large screens */
+  .show-for-desktop{
+    display: block;
+  }
+}
+
+@media(max-width: 45rem - 0.01rem) {
+  .show-for-mobile{
+    display: block;
+  }
+}
+
+.list-header{
+  background: #f7f7f7;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.list-item{
+  color:#241f1f;
+  display: flex;
+  border: 1px solid lightgray;
+  border-top: none;
+  flex-direction: column;
+  padding: 1rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.list-item:hover{
+  background:  #f7f7f7
+}
+/* expense list on large screens */
+@media(max-width: 45rem) {
+  .list-item{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+}
+
+.list-item__title{
+  margin: 0;
+  word-break: break-all;
+  font-weight: bold;
+}
+
+.list-item__message{
+  align-items: center;
+  justify-content: center;
+  color: gray;
+  padding: 2rem;
+}
+
+.list-item__message:hover{
+  background: none;
+}
+
+.list-item__sub-title{
+  color: gray;
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+
+.list-item__data{
+  margin: 1rem 0 0 0;
+}
+
+.list-body{
+  margin-bottom: 2rem;
+}
+
+/* list body for desktop mode */
+@media(max-width: 45rem) {
+  .list-body{
+    margin-bottom: 4rem;
+  }
+}
+/* List item data on desktop */
+@media(max-width: 45rem) {
+  .list-item__data{
+    margin: 0;
+    padding-left: 0.5rem;
   }
 }
