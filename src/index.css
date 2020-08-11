@@ -63,3 +63,25 @@ code {
 .page-header__actions{
   margin-top: 1rem;
 }
+
+.input-group{
+  /* smaller screens input display */
+  display: flex;
+  margin-bottom: 0.5rem;
+  flex-direction: column;
+
+  /* Larger screens input display */
+  @media(min-width: 45rem) {
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.input-group__item{
+  
+  margin-bottom: 0.5rem;
+  /* Larger screens input display */
+  @media(min-width: 45rem) {
+    margin: 0 0.5rem 0 0;
+  }
+}

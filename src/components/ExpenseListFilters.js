@@ -7,26 +7,32 @@ import sortByAmount from '../actions/filters/setSortByAmount';
 
 
 const ExpenseListFilters = (props) => (
-    <div>
-        <input
-            value={props.filters.text}
-            onChange={(e) => {  
-                props.dispatch(setFilterText({text: e.target.value}))
-            }}
-        />
-        <select
-            value={props.filters.sortBy}
-            onChange={(e) => {
-                const value = e.target.value;
-                if (value === 'date') {
-                    props.dispatch(sortByDate())
-                }else{
-                    props.dispatch(sortByAmount())
-                }
-        }}>
-            <option value='date'>Date</option>
-            <option value='amount'>Amount</option>
-        </select>
+    <div className='content-container'>
+        <div className='input-group'>
+            <div className='input-group__item'>
+                <input
+                    value={props.filters.text}
+                    onChange={(e) => {  
+                        props.dispatch(setFilterText({text: e.target.value}))
+                    }}
+                />
+            </div>
+            <div className='input-group__item'>
+                <select
+                    value={props.filters.sortBy}
+                    onChange={(e) => {
+                        const value = e.target.value;
+                        if (value === 'date') {
+                            props.dispatch(sortByDate())
+                        }else{
+                            props.dispatch(sortByAmount())
+                        }
+                }}>
+                    <option value='date'>Date</option>
+                    <option value='amount'>Amount</option>
+                </select>
+            </div>
+        </div>
     </div>
 )
 
