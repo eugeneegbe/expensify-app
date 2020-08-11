@@ -75,27 +75,27 @@ code {
   display: flex;
   margin-bottom: 0.5rem;
   flex-direction: column;
-
-  /* Larger screens input display */
-  @media(min-width: 45rem) {
-    flex-direction: row;
-    margin-bottom: 0.5rem;
-  }
 }
 
 .input-group__item{
-  
   margin-bottom: 0.5rem;
-  /* Larger screens input display */
-  @media(min-width: 45rem) {
-    margin: 0 0.5rem 0 0;
-  }
 }
 
-.text-input{
+.text-input, .select{
   border: 1px solid #cacccd;
   font-size: large;
   font-weight: 300;
   height: 50px;
   padding: 0.5rem;
+}
+
+/* Larger screens input display */
+@media(min-width: 45rem) {
+  .input-group{
+    flex-direction: row;
+    margin-bottom: 0.5rem;
+  }
+  .input-group__item{
+    margin: 0 0.5rem 0 0;
+  }
 }

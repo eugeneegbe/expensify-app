@@ -21,6 +21,7 @@ const ExpenseListFilters = (props) => (
             <div className='input-group__item'>
                 <select
                     value={props.filters.sortBy}
+                    className='select'
                     onChange={(e) => {
                         const value = e.target.value;
                         if (value === 'date') {
