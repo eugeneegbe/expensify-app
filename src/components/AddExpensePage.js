@@ -11,12 +11,14 @@ const AddExpensePage = (props) => (
             </div>
 
         </div>
-        <ExpenseForm
-            onSubmit={ (expense) => {
-                props.dispatch(startAddExpense(expense) )
-                props.history.push( '/' );
-            }}
-        /> 
+        <div className='content-container'>
+            <ExpenseForm
+                onSubmit={ (expense) => {
+                    props.dispatch(startAddExpense(expense) )
+                    props.history.push( '/' );
+                }}
+            />
+        </div>
     </div>
 )
 
