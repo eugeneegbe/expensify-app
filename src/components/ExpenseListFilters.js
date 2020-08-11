@@ -13,6 +13,7 @@ const ExpenseListFilters = (props) => (
                 <input
                     value={props.filters.text}
                     className='text-input'
+                    placeholder='Search expenses'
                     onChange={(e) => {  
                         props.dispatch(setFilterText({text: e.target.value}))
                     }}
