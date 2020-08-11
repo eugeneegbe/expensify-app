@@ -12,6 +12,7 @@ const ExpenseListFilters = (props) => (
             <div className='input-group__item'>
                 <input
                     value={props.filters.text}
+                    className='text-input'
                     onChange={(e) => {  
                         props.dispatch(setFilterText({text: e.target.value}))
                     }}
